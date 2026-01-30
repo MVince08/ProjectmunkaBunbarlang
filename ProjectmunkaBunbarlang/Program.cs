@@ -7,7 +7,7 @@ class Program
 	{
 		Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-		Console.WriteLine("Válasszon játékot lehetőségek: \n\tBlackjack(21): 'B'\n\tComingSoon");
+		Console.WriteLine("Válasszon játékot lehetőségek: \n\tBlackjack(21): 'B'\n\tRide the Bus: 'R'\n\tComing soon...");
 
 		if (Console.ReadKey(true).KeyChar is 'B' or 'b')
 		{
@@ -15,5 +15,10 @@ class Program
 			Game game = new Game();
 			game.Start();
 		}
-	}
+		else if (Console.ReadKey(true).KeyChar is 'B' or 'b')
+		{
+            Console.WriteLine("Ride the Bus-t választotta, átirányítás...");
+		}
+
+    }
 }

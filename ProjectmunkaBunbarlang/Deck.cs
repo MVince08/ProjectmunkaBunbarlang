@@ -1,53 +1,52 @@
 ﻿// Deck.cs BLACKJACK
-
 public class Deck
 {
-	private List<Card> cards;
-	private Random random;
+    private List<Card> cards;
+    private Random random;
 
-	public Deck()
-	{
-		cards = new List<Card>();
-		random = new Random();
-		InitializeDeck();
-	}
+    public Deck()
+    {
+        cards = new List<Card>();
+        random = new Random();
+        InitializeDeck();
+    }
+    private void InitializeDeck()
+    {
+        string[] suits = { "♠", "♥", "♦", "♣" };
+        string[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+        int[] values = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11 };
 
-	private void InitializeDeck()
-	{
-		string[] suits = { "♠", "♥", "♦", "♣" };
-		string[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
-		int[] values = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11 };
+        foreach (string suit in suits)
+        {
+            for (int i = 0; i < ranks.Length; i++)
+            {
+                cards.Add(new Card(suit, ranks[i], values[i]));
+            }
+        }
+    }
 
-		foreach (string suit in suits)
-		{
-			for (int i = 0; i < ranks.Length; i++)
-			{
-				cards.Add(new Card(suit, ranks[i], values[i]));
-			}
-		}
-	}
+    public void Shuffle()
+    {
+        cards = cards.OrderBy(c => random.Next()).ToList();
+    }
 
-	public void Shuffle()
-	{
-		cards = cards.OrderBy(c => random.Next()).ToList();
-	}
+    public Card DrawCard()
+    {
+        if (cards.Count == 0)
+        {
+            InitializeDeck();
+            Shuffle();
+        }
 
-	public Card DrawCard()
-	{
-		if (cards.Count == 0)
-		{
-			InitializeDeck();
-			Shuffle();
-		}
+        Card card = cards[0];
+        cards.RemoveAt(0);
+        return card;
+    }
 
-		Card card = cards[0];
-		cards.RemoveAt(0);
-		return card;
-	}
-}
+    /* Dobálja az errort folyamat nem teljesen értem mi folyik itt, szval nme használom az enum-ot, meg sztem ez logikusabb és egyszerűbb logika
+     
 
-/*
- * public enum Suit
+ public enum Suit
 {
     Spades,
     Hearts,
@@ -102,6 +101,13 @@ public class Deck
     private List<Card> cards;
     private Random random;
 
+    public Deck()
+    {
+        cards = new List<Card>();
+        random = new Random();
+        InitializeDeck();
+    }
+
     private void InitializeDeck()
     {
         foreach (Suit suit in Enum.GetValues(typeof(Suit)))
@@ -116,4 +122,7 @@ public class Deck
             }
         }
     }
- */
+     */
+
+}
+
