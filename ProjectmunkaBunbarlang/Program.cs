@@ -20,7 +20,7 @@ class Program
 		{
             Console.WriteLine("Ride the Bus-t választotta, átirányítás...");
         }
-		else if (Console.ReadKey(true).KeyChar is 'F' or 'F')
+		else if (Console.ReadKey(true).KeyChar is 'F' or 'f')
         {
             Console.WriteLine("Félkarú rablót választotta, átirányítás... ");
             Game2 jatek = new Game2();
