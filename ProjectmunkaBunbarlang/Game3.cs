@@ -7,14 +7,12 @@ using System.Threading.Tasks;
     internal class Game3
     {
         private Deck deck;
-        private string playerName;
         private int correctPredictions = 0;
         private int wrongPredictions = 0;
 
         public Game3()
         {
             deck = new Deck();
-            playerName = "Játékos";
         }
 
         public void Start()
