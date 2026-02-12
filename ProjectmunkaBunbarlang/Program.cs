@@ -25,8 +25,8 @@ class Program
         }
 		else if (valasztas is "F" or "f")
         {
-            Console.WriteLine("Félkarú rablót választotta, átirányítás... ");
-            Game2 jatek = new Game2();
+            Console.WriteLine("Félkarú rablót választotta, átirányítás... \n");
+            FelkaruRabloGame jatek = new FelkaruRabloGame();
             jatek.Start();
         }
     }

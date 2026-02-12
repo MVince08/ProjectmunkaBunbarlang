@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Szerencsejatek
 {
-    // Ez egy segédosztály, ami egy pörgetés eredményét tárolja
+    // Pörgetés eredményét tároló osztály
     public class PorgetesEredmeny
     {
         public string[] Szimbolumok { get; set; }
@@ -11,16 +11,17 @@ namespace Szerencsejatek
         public bool Jackpot { get; set; }
     }
 
-    public class FelikaruRablo
+    // Félkarú Rabló logika osztály
+    public class FelikaruRabloLogika
     {
         public int Egyenleg { get; private set; }
-        private readonly string[] _szimbolumok = { "X", "7", "O", "A", "B" };
-        private Random _rnd;
+        private readonly string[] szimbolumok = { "X", "7", "O", "A", "B" };
+        private Random rnd;
 
-        public FelikaruRablo(int kezdoEgyenleg)
+        public FelikaruRabloLogika()
         {
-            Egyenleg = kezdoEgyenleg;
-            _rnd = new Random();
+            Egyenleg = 1000; // 1000 Ft-tal indul a game
+            rnd = new Random();
         }
 
         public bool VanPenze()
@@ -38,10 +39,10 @@ namespace Szerencsejatek
             Egyenleg -= tet;
 
             // 3 véletlen szimbólum
-            string s1 = _szimbolumok[_rnd.Next(_szimbolumok.Length)];
-            string s2 = _szimbolumok[_rnd.Next(_szimbolumok.Length)];
-            string s3 = _szimbolumok[_rnd.Next(_szimbolumok.Length)];
-
+            string s1 = szimbolumok[rnd.Next(szimbolumok.Length)];
+            string s2 = szimbolumok[rnd.Next(szimbolumok.Length)];
+            string s3 = szimbolumok[rnd.Next(szimbolumok.Length)];
+            
             int nyeremeny = 0;
             bool isJackpot = false;
 
