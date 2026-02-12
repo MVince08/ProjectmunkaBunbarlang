@@ -199,7 +199,7 @@ using System.Threading.Tasks;
         private void DisplayResults()
         {
             Console.WriteLine("\n╔════════════════════════════════╗");
-            Console.WriteLine("║         VÉGEREDMÉNY             ║");
+            Console.WriteLine("║         VÉGEREDMÉNY            ║");
             Console.WriteLine("╚════════════════════════════════╝");
             Console.WriteLine($"\nHelyes: {correctPredictions}");
             Console.WriteLine($"Rossz: {wrongPredictions}");

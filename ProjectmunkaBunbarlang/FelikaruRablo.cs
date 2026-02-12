@@ -13,7 +13,7 @@ namespace Szerencsejatek
 
     public class FelikaruRablo
     {
-        public int Egyenleg { get; private set; }
+        private int Egyenleg { get; set; }
         private readonly string[] _szimbolumok = { "X", "7", "O", "A", "B" };
         private Random _rnd;
 
