@@ -8,7 +8,7 @@ class Program
 	{
 		Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-		Console.WriteLine("Válasszon játékot lehetőségek: \n\tBlackjack(21): 'B'\n\tRide the Bus: 'R'\n\tFélkarú Rabló: 'F' ");
+		Console.Write("Válasszon játékot lehetőségek: \n\tBlackjack(21): 'B'\n\tRide the Bus: 'R'\n\tFélkarú Rabló: 'F': ");
 		string valasztas = Console.ReadLine();
 
         if (valasztas is "B" or "b")
