@@ -66,9 +66,10 @@ using System.Threading.Tasks;
 
         private void Stage1_Suit()
         {
-            Console.WriteLine("═════════════════════════════════════");
-            Console.WriteLine("Etap 1: MILYEN SZIMBÓLUMÁT (LAPOK)?");
-            Console.WriteLine("═════════════════════════════════════");
+            Console.WriteLine("═══════════════════════════════════");
+            Console.WriteLine("Kör 1: MILYEN SZIMBÓLUM (LAPOK)?");
+            Console.WriteLine("═══════════════════════" +
+                "════════════");
             Console.WriteLine("Meg kell jósold a kártya szimbólumát! (♠/♥/♦/♣)\n");
 
             for (int i = 0; i < 4; i++)
@@ -105,7 +106,7 @@ using System.Threading.Tasks;
         private void Stage2_Between()
         {
             Console.WriteLine("═════════════════════════════════════");
-            Console.WriteLine("Etap 2: KÖZÖTT VAGY KÍVÜL?");
+            Console.WriteLine("Kör 2: KÖZÖTT VAGY KÍVÜL?");
             Console.WriteLine("═════════════════════════════════════");
             Console.WriteLine("Meg kell jósold, hogy a következő kártya a két kártya között van-e!\n");
 
@@ -160,7 +161,7 @@ using System.Threading.Tasks;
         private void Stage3_HigherLower()
         {
             Console.WriteLine("═══════════════════════════════════");
-            Console.WriteLine("Etap 3: MAGASABB vagy ALACSONYABB?");
+            Console.WriteLine("Kör 3: MAGASABB vagy ALACSONYABB?");
             Console.WriteLine("═══════════════════════════════════");
             Console.WriteLine("Meg kell jósold, hogy a következő kártya magasabb vagy alacsonyabb-e az előzőnél.\n");
 
